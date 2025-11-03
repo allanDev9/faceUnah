@@ -1,0 +1,29 @@
+<section class="flex flex-row space-x-2 py-4 px-5 items-center text-white">
+  @if(!username){
+  <h1
+    class="tooltip text-lg font-bold text-white cursor-pointer hover:text-gray-300"
+    (click)="openLoginModal()"
+    data-title="Iniciar Sesión"
+  >
+    Inicia Sesión
+  </h1>
+  }@else {
+  <div class="flex flex-row space-x-2 items-center">
+    <div class="text-white"><mat-icon aria-label="false" fontIcon="account_circle"></mat-icon></div>
+    <h1 class="text-lg font-bold text-white">{{ username }}</h1>
+    <div
+      class="ml-auto text-white hover:text-gray-300 cursor-pointer transition-colors"
+      (click)="Logout()"
+    >
+      <mat-icon aria-label="false" fontIcon="logout"></mat-icon>
+    </div>
+  </div>
+  }
+</section>
+
+<app-modal-inicio-de-sesion
+  [isOpen]="showLoginModal"
+  (onClose)="onModalClose()"
+  (onLogin)="handleLogin($event)"
+>
+</app-modal-inicio-de-sesion>

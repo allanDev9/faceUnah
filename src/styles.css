@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+/* Tooltip personalizado */
+.tooltip {
+  position: relative;
+}
+
+.tooltip:hover::after {
+  content: attr(data-title);
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  @apply bg-gray-400 text-black text-xs px-2 py-1 rounded shadow-lg whitespace-nowrap;
+  margin-bottom: 5px;
+  z-index: 1000;
+}
+
+.tooltip:hover::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  @apply border-4 border-transparent border-t-gray-800;
+  margin-bottom: 1px;
+}

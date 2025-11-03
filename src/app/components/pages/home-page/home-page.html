@@ -1,0 +1,15 @@
+<section class="min-h-screen bg-gray-800">
+  <div class="flex flex-row justify-between text-white h-screen">
+    <div class="fixed top-20 left-0 w-[320px] h-[87%]">
+      <app-info-principal></app-info-principal>
+    </div>
+    <div class="absolute left-[29%] top-20 w-[590px] h-screen">
+      @for(pub of getPublications(); track $index){
+      <div class="mb-4 mt-4 p-4 bg-gray-600 rounded border-l-4 border-green-500">
+        <p>{{ pub }}</p>
+      </div>
+      }
+    </div>
+    <div class="fixed top-20 right-0 w-[320px] h-[87%] p-4">Sugerencias</div>
+  </div>
+</section>
