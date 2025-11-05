@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, formatDate } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { User } from '../../models/user';
@@ -17,7 +17,9 @@ export class ModalInicioDeSesion {
 
   closeModal(): void {
     this.onClose.emit();
+    this.clearForm();
   }
+
   loginForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
@@ -27,6 +29,10 @@ export class ModalInicioDeSesion {
     });
   }
 
+  clearForm(): void {
+    this.loginForm.reset();
+  }
+
   confirm(): void {
     if (this.loginForm.valid) {
       const formData = this.loginForm.value;
@@ -34,6 +40,7 @@ export class ModalInicioDeSesion {
         ...formData,
       });
       this.closeModal();
+      this.clearForm();
     }
   }
 }
