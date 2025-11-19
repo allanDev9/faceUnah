@@ -1,11 +1,28 @@
 <section class="min-h-screen bg-gray-800 p-5">
-  <div class="flex flex-row justify-between items-center">
-    <div class="w-[350px] h-[88vh] fixed top-20 left-0 p-4 bg-gray-900">
+  <div class="flex flex-row justify-between items-stretch">
+    <!-- Sidebar fijo -->
+    <div class="w-[350px] h-[100vh] fixed top-20 left-0 p-4 bg-gray-900">
       <h1 class="text-white font-bold text-3xl">Amigos</h1>
       <hr class="border-gray-400 mt-4 w-full" />
     </div>
-    <div class="w-[75%] h-[80vh] relative overflow-y-auto left-[330px] top-0 p-4">
-      <p class="text-white">Amigos que puedes agregar:</p>
+
+    <!-- Contenedor de amigos -->
+    <div class="ml-[570px] w-full grid grid-cols-3 gap-4 p-6 text-white">
+      @for(amigo of amigos; track $index) {
+      <section class="flex flex-row gap-5">
+        <div>{{ amigo.nombre }}</div>
+        <div class="text-red-500">{{ amigo.edad }}</div>
+      </section>
+      }
     </div>
   </div>
+
+  <!-- Indicador de carga al final -->
+  @if(amigos.length === 0){
+  <div id="final-de-lista" class="flex justify-center items-center py-8 ml-[370px]">
+    <div
+      class="animate-spin rounded-full h-10 w-10 border-4 border-gray-600 border-t-blue-500"
+    ></div>
+  </div>
+  }
 </section>

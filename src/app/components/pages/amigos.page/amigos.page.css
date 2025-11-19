@@ -1,0 +1,33 @@
+/* Animación suave para las tarjetas de amigos */
+.bg-gray-900.rounded-xl {
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.bg-gray-900.rounded-xl.opacity-100 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Lazy loading para imágenes */
+img[data-src] {
+  transition: opacity 0.3s ease-in;
+}
+
+img.loaded {
+  opacity: 1;
+}
+
+/* Espaciado del contenedor principal */
+.ml-\[350px\] {
+  margin-left: 350px;
+}
+
+@media (max-width: 768px) {
+  .ml-\[350px\] {
+    margin-left: 0;
+  }
+
+  .w-\[350px\] {
+    display: none;
+  }
+}
