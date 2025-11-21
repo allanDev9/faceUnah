@@ -1,11 +1,10 @@
 import { Component, OnInit, OnDestroy, QueryList, ViewChildren, ElementRef } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-amigos.page',
   standalone: true,
-  imports: [CommonModule, MatIconModule],
+  imports: [MatIconModule],
   templateUrl: './amigos.page.html',
   styleUrls: ['./amigos.page.css'],
 })

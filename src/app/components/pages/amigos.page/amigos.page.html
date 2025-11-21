@@ -7,9 +7,9 @@
     </div>
 
     <!-- Contenedor de amigos -->
-    <div class="ml-[570px] w-full grid grid-cols-3 gap-4 p-6 text-white">
+    <div class="ml-[355px] w-full grid grid-cols-3 gap-4 p-6 text-white">
       @for(amigo of amigos; track $index) {
-      <section class="flex flex-row gap-5">
+      <section class="flex flex-row gap-5 border border-red-400 p-4 rounded-lg w-full h-[30vh]">
         <div>{{ amigo.nombre }}</div>
         <div class="text-red-500">{{ amigo.edad }}</div>
       </section>
