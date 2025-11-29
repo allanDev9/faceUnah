@@ -10,4 +10,10 @@ import { UserProfile } from '../../layouts/user-profile/user-profile';
   templateUrl: './nav-bar.html',
   styleUrl: './nav-bar.css',
 })
-export class NavBar {}
+export class NavBar {
+  activeItem = true;
+
+  setActive(item: string) {
+    this.activeItem = item === 'home' ? true : false;
+  }
+}

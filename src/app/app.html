@@ -1,4 +1,8 @@
+@if(showSplash){
+<app-bienvenida-logo-face-unah></app-bienvenida-logo-face-unah>
+} @if(!showSplash){
 <app-nav-bar></app-nav-bar>
 <main class="pt-[80px]">
   <router-outlet></router-outlet>
 </main>
+}

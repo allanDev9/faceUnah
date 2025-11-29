@@ -1,0 +1,11 @@
+.animated-title {
+  animation: parpedText 2s infinite alternate;
+}
+@keyframes parpedText {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
